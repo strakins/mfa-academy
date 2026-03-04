@@ -155,7 +155,7 @@ export function Navbar() {
               })}
 
               <Button
-                variant="ghost"
+                variant="outline"
                 className="ml-2 border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm"
                 onClick={() => signOut({ callbackUrl: "/" })}
               >
