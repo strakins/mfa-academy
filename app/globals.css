@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark mode  */
+    --bg: 16 42 67;           
+    --card: 30 41 59;         
+    --text: 240 244 248;     
+    --muted: 203 213 225;     
+    --border: 51 65 85;       
+    --primary: 240 180 41;   
+    --primary-foreground: 16 42 67; 
+    --accent: 250 219 95;     
+    --accent-foreground: 16 42 67;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--text));
+  }
+
+}
+
+@layer components {
+  .surface {
+    @apply rounded-2xl border;
+    border-color: rgb(var(--border));
+    background-color: rgb(var(--card));
+  }
+
+  .muted-text {
+    color: rgb(var(--muted));
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--primary));
+    color: rgb(var(--primary-foreground));
+    @apply rounded-xl px-4 py-2 text-sm font-semibold transition active:scale-[0.98] hover:opacity-90;
+  }
+
+  .btn-secondary {
+    background-color: rgb(var(--accent));
+    color: rgb(var(--accent-foreground));
+    @apply rounded-xl px-4 py-2 text-sm font-semibold transition active:scale-[0.98] hover:opacity-90;
+  }
+
+  .btn-ghost {
+    @apply rounded-xl px-4 py-2 text-sm font-semibold transition active:scale-[0.98];
+    background-color: transparent;
+    color: rgb(var(--text));
+  }
+
+  .btn-ghost:hover {
+    background-color: rgb(var(--border));
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
