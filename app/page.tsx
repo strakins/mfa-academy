@@ -3,7 +3,6 @@
 
 import Container from "@/components/Container";
 import { SectionTitle } from "@/components/SectionTitle";
-import { Button } from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,7 +18,6 @@ import {steps} from '../data/steps'
 import {galleryImages} from '../data/galleryImages'
 import {
   Sparkles,
-  Users,
   ArrowRight,
 } from "lucide-react";
 import Head from "next/head";
@@ -135,7 +133,7 @@ export default function HomePage() {
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {outcomes.map((outcome, idx) => (
-                <FeatureCard key={outcome.title} {...outcome} index={idx} />
+                <FeatureCard key={outcome.title} {...outcome} index={idx} description={outcome.desc} />
               ))}
             </div>
 
