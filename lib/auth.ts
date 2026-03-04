@@ -81,6 +81,7 @@ export const authOptions: NextAuthOptions = {
         if (u) {
           token.sub = String(u._id);
           (token as any).role = u.role;
+          (token as any).id = u._id;
           (token as any).name = u.name;
           (token as any).picture = u.avatarUrl ?? token.picture;
         }
