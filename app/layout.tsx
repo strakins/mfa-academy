@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-dvh bg-white text-neutral-900">
         <Providers>
           <Navbar />
-            <main className="mx-auto w-full max-w-6xl md:px-4 md:py-0 ">
+            <main className="mx-auto w-full max-w-6xl md:px-4 md:py-4 ">
               {children}
               <Toaster position="top-right" />
             </main>
