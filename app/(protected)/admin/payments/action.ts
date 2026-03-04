@@ -69,7 +69,7 @@ export async function declinePayment(paymentId: string, formData: FormData) {
   if (!payment) return { ok: false, message: "Payment not found." };
 
   payment.status = "DECLINED";
-  payment.reviewedBy = session.user.id as any;
+  payment.reviewedBy = session.user.role as any;
   payment.reviewNote = parsed.data.note;
 
   await payment.save();

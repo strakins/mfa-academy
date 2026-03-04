@@ -40,7 +40,7 @@ const fadeUp = {
 };
 
 export default function AdminCoursesClient({ initialCourses }: { initialCourses: Course[] }) {
-  const [courses, setCourses] = useState<Course[]>(initialCourses);
+  const [courses] = useState<Course[]>(initialCourses);
   const [query, setQuery] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
