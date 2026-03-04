@@ -2,13 +2,23 @@ import Link from "next/link";
 import { getCourses } from "@/lib/courses";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { ArrowRight } from "lucide-react";
 
 function formatNgn(n: number) {
   return new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 }).format(n);
 }
 
+
 export default async function CoursesPage() {
+  
   const courses = await getCourses();
+
+  const session = await getServerSession(authOptions);
+
+  const user = session?.user;
+  
 
   return (
     <div className="grid gap-6">
@@ -18,7 +28,7 @@ export default async function CoursesPage() {
           Choose a track that fits your goal. Apply online and join the next cohort.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
-          <Link href="/sign-up"><Button>Apply / Create Account</Button></Link>
+          { user ? "" : <Link href="/sign-up"><Button>Apply / Create Account</Button></Link> }
           <Link href="/works"><Button variant="outline">View Past Works</Button></Link>
         </div>
       </div>
@@ -61,6 +71,19 @@ export default async function CoursesPage() {
                 </ul>
               </div>
             </CardContent>
+            <div className="flex justify-center my-4">
+              {user ? 
+                <Link
+                  href="/apply"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-900 transition hover:bg-gold-400 active:scale-[0.98]"
+                  aria-label="Apply to Michelle Fashion Academy"
+                >
+                  Apply Now <ArrowRight className="h-4 w-4" />
+                </Link>
+                : 
+                ""
+              }
+            </div>
           </Card>
         ))}
       </div>

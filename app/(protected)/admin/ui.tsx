@@ -110,10 +110,10 @@ export default function AdminDashboardClient({
   }
 
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-6 px-2">
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-        <h1 className="text-2xl font-semibold tracking-tight">Admin Dashboard</h1>
-        <p className="mt-1 text-sm text-neutral-600">
+        <h1 className="text-xl md:text-2xl font-semibold tracking-tight">Admin Dashboard</h1>
+        <p className="mt-1 text-[12px] md:text-sm text-neutral-600">
           Overview of your academy activity and feedback.
         </p>
       </motion.div>
@@ -123,7 +123,7 @@ export default function AdminDashboardClient({
         <StatCard title="Registered Users" value={stats.users} />
         <StatCard title="Students" value={stats.students} />
         <StatCard title="Instructors" value={stats.instructors} />
-        <StatCard title="Feedback" value={stats.reviewCount} />
+        <StatCard title="Reviews" value={stats.reviewCount} />
       </div>
 
       {/* Reviews */}

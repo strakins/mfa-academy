@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    /* Dark mode  */
     --bg: 16 42 67;           
     --card: 30 41 59;         
     --text: 240 244 248;     

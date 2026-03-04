@@ -9,7 +9,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (session.user.role !== "ADMIN") redirect("/profile");
 
   return (
-    <div className="min-h-screen grid gap-6">
+    <div className="min-h-screen grid gap-6 p-2.5">
       <AdminSubNav />
       <div>{children}</div>
     </div>
