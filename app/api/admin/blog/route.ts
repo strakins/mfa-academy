@@ -5,13 +5,20 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { slugify } from "@/lib/slug";
 
-function isAdmin(session: any) {
-  return (session?.user as any)?.role === "ADMIN";
+async function isAdmin() {
+  const session = await getServerSession(authOptions)
+
+  if(!session || session.user.role !=="ADMIN") {
+    return null;
+  }
+  return session;
 }
 
 export async function GET() {
   const session = await getServerSession(authOptions);
-  if (!isAdmin(session)) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (!session) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  } 
 
   await connectDB();
   const posts = await BlogPost.find({})
@@ -24,7 +31,9 @@ export async function GET() {
 
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
-  if (!isAdmin(session)) return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  if (!session) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  } 
 
   const body = await req.json().catch(() => null);
 
@@ -47,8 +56,8 @@ export async function POST(req: Request) {
   const exists = await BlogPost.findOne({ slug }).lean();
   if (exists) slug = `${slug}-${Date.now()}`;
 
-  const authorId = String((session.user as any)?.id ?? (session.user as any)?.email);
-  const authorName = String((session.user as any)?.name ?? "Admin");
+  const authorId = String((session?.user)?.id ?? (session?.user)?.email);
+  const authorName = String((session?.user)?.name ?? "Admin");
 
   const created = await BlogPost.create({
     title,
