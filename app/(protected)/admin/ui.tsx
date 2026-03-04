@@ -174,7 +174,7 @@ export default function AdminDashboardClient({
                     {!f.approved && (
                       <Button
                         type="button"
-                        variant="secondary"
+                        variant="outline"
                         onClick={() => onApprove(String(f._id))}
                         disabled={pending}
                       >
@@ -238,7 +238,7 @@ export default function AdminDashboardClient({
               />
 
               <div className="mt-4 flex gap-2">
-                <Button type="button" variant="secondary" className="flex-1" onClick={closeDeleteModal}>
+                <Button type="button" variant="outline" className="flex-1" onClick={closeDeleteModal}>
                   Cancel
                 </Button>
 
