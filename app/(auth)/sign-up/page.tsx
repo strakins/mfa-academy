@@ -1,4 +1,3 @@
-"use server";
 
 import { redirect } from "next/navigation";
 import { connectDB } from "@/lib/db";
@@ -17,8 +16,8 @@ const schema = z.object({
 });
 
 async function signUpAction(formData: FormData) {
+"use server";
   
-
   const raw = {
     name: String(formData.get("name") ?? ""),
     email: String(formData.get("email") ?? ""),
