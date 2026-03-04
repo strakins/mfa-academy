@@ -1,3 +1,5 @@
+"use server";
+
 import { redirect } from "next/navigation";
 import { connectDB } from "@/lib/db";
 import { User } from "@/models/User";
@@ -15,7 +17,7 @@ const schema = z.object({
 });
 
 async function signUpAction(formData: FormData) {
-  "use server";
+  
 
   const raw = {
     name: String(formData.get("name") ?? ""),
@@ -25,7 +27,7 @@ async function signUpAction(formData: FormData) {
 
   const parsed = schema.safeParse(raw);
   if (!parsed.success) {
-    return { ok: false, message: "Please enter valid details." };
+    throw new Error("Please enter valid details.")
   }
 
   await connectDB();
@@ -33,7 +35,7 @@ async function signUpAction(formData: FormData) {
 
   const exists = await User.findOne({ email });
   if (exists) {
-    return { ok: false, message: "Account already exists. Please sign in." };
+    throw new Error("Account already exists. Please sign in.");
   }
 
   const passwordHash = await hashPassword(parsed.data.password);
