@@ -12,7 +12,6 @@ const tabs = [
   { href: "/admin/users", label: "Users" },
   { href: "/admin/blog", label: "Blog" },
   { href: "/admin/cohortworks", label: "Upload Works" },
-  // { href: `/admin/cohortworks/${_id}`/works, label: "Works" },
 ];
 
 export default function AdminSubNav() {
