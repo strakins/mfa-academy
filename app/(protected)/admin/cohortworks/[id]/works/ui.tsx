@@ -15,7 +15,7 @@ type Props = {
 const MAX_MB = 8;
 const ACCEPTED = ["image/jpeg", "image/png", "image/webp"];
 
-export default function AdminWorkUploader({ cohortId }: Props) {
+export default function AdminWorkUploader({ cohortId, cohortTitle }: Props) {
   const [file, setFile] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
 
@@ -162,7 +162,7 @@ export default function AdminWorkUploader({ cohortId }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white backdrop-blur">
-        {/* <h1 className="text-xl font-extrabold">Upload Works • {cohortTitle}</h1> */}
+        <h1 className="text-xl font-extrabold">Upload Works • {cohortTitle}</h1>
         <p className="mt-1 text-sm text-ash-200">
           Upload student designs for this cohort. These will appear on the public Works page.
         </p>
