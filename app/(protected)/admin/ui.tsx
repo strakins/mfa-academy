@@ -110,7 +110,7 @@ export default function AdminDashboardClient({
   }
 
   return (
-    <div className="grid gap-6 px-2">
+    <div className="grid gap-6 px-2 md:-mt-80">
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-xl md:text-2xl font-semibold tracking-tight">Admin Dashboard</h1>
         <p className="mt-1 text-[12px] md:text-sm text-neutral-600">

@@ -182,15 +182,15 @@ export default function AdminBlogList() {
   }
 
   return (
-    <div className="bg-navy-900 text-white">
+    <div className="">
       <div className="mx-auto max-w-6xl px-4 py-10">
         {/* Header */}
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+        <div className="rounded-3xl border border-gold-600 bg-white/5 p-6 backdrop-blur">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <h1 className="text-2xl font-extrabold">Admin • Blog</h1>
-              <p className="mt-1 text-sm text-ash-200">
-                Create, edit, and publish posts. Published posts appear on the public blog.
+              <h1 className="text-2xl font-extrabold text-ash-900">Blogs </h1>
+              <p className="mt-1 text-sm text-gold-700 italic">
+                Create Educative blog Content here.
               </p>
             </div>
 
@@ -205,12 +205,12 @@ export default function AdminBlogList() {
               </button>
 
               {/* Optional: still allow dedicated page edit/create */}
-              <Link
+              {/* <Link
                 href="/admin/blog/new"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
               >
                 Advanced Editor
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
