@@ -362,7 +362,7 @@ export default function HomePageClient({
               <FadeUp key={step.title} delay={idx * 0.08}>
                 <div className="group relative rounded-3xl border border-white/8 bg-[#0F0E0B] p-8 transition hover:border-[#C9A84C]/20 hover:bg-[#141210]">
                   {/* Step number — large ghost text */}
-                  <div className="flex justify-between">
+                  <div className="flex flex-col md:flex-row md:justify-between">
                     <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-gold-400 text-gold-400">
                       <span className="text-sm font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
                         {idx + 1}
@@ -370,13 +370,13 @@ export default function HomePageClient({
                     </div>
 
                     <h3
-                      className="text-xl font-bold text-white"
+                      className="text-md md:text-xl font-bold text-white"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {step.title}
                     </h3>
                   </div>
-                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
+                  <p className="mt-2 text-[12px] md:text-sm font-light leading-relaxed text-white/70">
                     {step.desc}
                   </p>
                 </div>
