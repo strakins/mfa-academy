@@ -46,7 +46,7 @@ function SectionLabel({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-3 mb-4">
       <div className="" />
-      <span className="text-[11px] uppercase tracking-[0.3em] text-[#C9A84C] font-semibold">
+      <span className="text-[11px] uppercase tracking-[0.3em] text-gold-400 font-semibold">
         {text}
       </span>
     </div>
@@ -55,7 +55,7 @@ function SectionLabel({ text }: { text: string }) {
 
 // ─── main component ───────────────────────────────────────────────────────────
 
-export default function HomePageClient({
+export default function HomePageClient({ 
   heroImage,
   galleryImages,
 }: {
@@ -64,7 +64,7 @@ export default function HomePageClient({
 }) {
   return (
     <div
-      className="bg-[#80bed1] text-[#EDE8DF]"
+      className="bg-navy-900 text-white"
       style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
     >
 
@@ -114,10 +114,10 @@ export default function HomePageClient({
             {/* Sub */}
             <motion.p
               variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0 } }}
-              className="mt-6 max-w-md text-base font-light leading-relaxed text-[#EDE8DF]/60"
+              className="mt-6 max-w-md text-base font-light leading-relaxed text-white"
             >
-              Nigeria's premier fashion academy with focused on hands-on training from complete
-              beginner to industry-ready professional. Build your portfolio, find
+              Nigeria's premier fashion academy with focus on hands-on training from complete
+              beginner to industry ready professional. Build your portfolio, find
               your voice, launch your career.
             </motion.p>
 
@@ -127,18 +127,18 @@ export default function HomePageClient({
               className="mt-8 flex gap-8"
             >
               {[
-                { n: "4", label: "Cohorts / year" },
+                { n: "4", label: "Cohorts" },
                 { n: "100+", label: "Graduates" },
                 { n: "5★", label: "Avg. rating" },
               ].map((s) => (
                 <div key={s.label}>
                   <p
-                    className="text-3xl font-black text-white"
+                    className="text-2xl font-black text-white"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {s.n}
                   </p>
-                  <p className="mt-0.5 text-[11px] uppercase tracking-widest text-white/35">
+                  <p className="mt-0.5 text-[10px] uppercase tracking-widest text-white/70">
                     {s.label}
                   </p>
                 </div>
@@ -152,14 +152,14 @@ export default function HomePageClient({
             >
               <Link
                 href="/courses"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#C9A84C] px-7 py-3.5 text-sm font-semibold text-[#0C0B09] transition-all hover:bg-[#e0bc5a] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold-400 px-7 py-3.5 text-sm font-semibold text-[#0C0B09] transition-all hover:bg-gold-500 hover:text-white active:scale-[0.98]"
               >
                 Apply Now
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                <ArrowRight className="h-4 w-4 transition-transform  group-hover:translate-x-0.5" />
               </Link>
               <Link
                 href="/works"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white/70 transition hover:border-white/30 hover:text-white active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-gold-300 hover:text-white active:scale-[0.98]"
               >
                 View Gallery
                 <ArrowUpRight className="h-4 w-4" />
@@ -168,8 +168,8 @@ export default function HomePageClient({
           </motion.div>
 
           {/* Bottom left decoration */}
-          <div className="absolute bottom-8 left-8 hidden lg:flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-white/20">
-            <div className="h-px w-10 bg-white/15" />
+          <div className="absolute bottom-8 left-8 hidden lg:flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-white">
+            <div className="h-px w-5 bg-white" />
             Michelle Fashion Academy
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function HomePageClient({
             className="object-cover object-top"
           />
           {/* Left fade into dark background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0C0B09] via-[#0C0B09]/20 to-transparent lg:block hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ash-500/40 via-gold-600/20 to-transparent lg:block hidden" />
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0C0B09] to-transparent lg:hidden" />
 
@@ -193,13 +193,13 @@ export default function HomePageClient({
             <div className="rounded-2xl border border-white/10 bg-black/50 p-4 backdrop-blur-md">
               <div className="flex items-center gap-1 mb-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-3 w-3 fill-[#C9A84C] text-[#C9A84C]" />
+                  <Star key={i} className="h-3 w-3 fill-gold-400 text-gold-400" />
                 ))}
               </div>
-              <p className="text-xs text-white/80 max-w-[140px] leading-snug">
+              <p className="text-xs text-white max-w-[140px] leading-snug">
                 "Best decision I ever made for my career."
               </p>
-              <p className="mt-1.5 text-[10px] uppercase tracking-widest text-white/35">
+              <p className="mt-1.5 text-[10px] uppercase tracking-widest text-white/60">
                 — MFA Graduate
               </p>
             </div>
@@ -220,17 +220,17 @@ export default function HomePageClient({
             >
               Your Journey to Fashion Excellence
             </h2>
-            <p className="mt-4 max-w-lg text-base font-light text-white/50 leading-relaxed">
+            <p className="mt-4 max-w-lg text-base font-light text-white/70 leading-relaxed">
               A comprehensive curriculum that builds both creative vision and the technical skills the industry demands.
             </p>
           </FadeUp>
 
-          <div className="mt-14 grid gap-px bg-white/5 rounded-3xl overflow-hidden sm:grid-cols-2">
+          <div className="mt-14 grid gap-px bg-ash-300 rounded-3xl overflow-hidden sm:grid-cols-2">
             {outcomes.map((outcome, idx) => (
               <FadeUp key={outcome.title} delay={idx * 0.07}>
-                <div className="group bg-[#0C0B09] p-8 transition-colors hover:bg-[#141210] h-full">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-[#C9A84C]/20 bg-[#C9A84C]/8">
-                    <CheckCircle2 className="h-5 w-5 text-[#C9A84C]" />
+                <div className="group bg-ash-600 p-8 transition-colors hover:bg-ash-700 h-full">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-gold-200">
+                    <CheckCircle2 className="h-5 w-5 text-gold-300" />
                   </div>
                   <h3
                     className="text-xl font-bold text-white"
@@ -238,7 +238,7 @@ export default function HomePageClient({
                   >
                     {outcome.title}
                   </h3>
-                  <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
+                  <p className="mt-2 text-sm font-light leading-relaxed text-white/60">
                     {outcome.desc}
                   </p>
                 </div>
@@ -248,7 +248,7 @@ export default function HomePageClient({
 
           {/* CTA band */}
           <FadeUp delay={0.2} className="mt-10">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-3xl border border-[#C9A84C]/15 bg-[#C9A84C]/5 px-8 py-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-3xl border border-gold-300 px-8 py-6">
               <div>
                 <p className="text-lg font-bold text-white" style={{ fontFamily: "'Playfair Display', serif" }}>
                   Ready to Start Your Fashion Journey?
@@ -257,7 +257,7 @@ export default function HomePageClient({
               </div>
               <Link
                 href="/apply"
-                className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-[#C9A84C] px-6 py-3 text-sm font-semibold text-[#0C0B09] transition hover:bg-[#e0bc5a]"
+                className="flex-shrink-0 inline-flex items-center gap-2 rounded-full bg-gold-300 px-6 py-3 text-sm font-semibold text-[#0C0B09] transition hover:bg-[#e0bc5a]"
               >
                 Apply Now <ArrowRight className="h-4 w-4" />
               </Link>
@@ -269,7 +269,7 @@ export default function HomePageClient({
       {/* ════════════════════════════════════════════════════
           GALLERY — masonry grid, random DB images
       ════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#0F0E0B] border-t border-white/5">
+      <section className="py-24 bg-ash-600 border-t border-white/95">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-12">
             <FadeUp>
@@ -280,13 +280,13 @@ export default function HomePageClient({
               >
                 See What Our
                 <br />
-                <em className="italic font-light text-white/50">Students Create</em>
+                <em className="italic font-light text-white/70">Students Create</em>
               </h2>
             </FadeUp>
             <FadeUp delay={0.1}>
               <Link
                 href="/works"
-                className="inline-flex items-center gap-2 rounded-full border border-white/12 px-5 py-2.5 text-sm font-medium text-white/60 transition hover:border-white/25 hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full bg-gold-300 text-navy-900 px-5 py-2.5 text-sm font-medium transition hover:border-white/25 hover:text-white"
               >
                 Explore all galleries <ChevronRight className="h-4 w-4" />
               </Link>
@@ -362,26 +362,20 @@ export default function HomePageClient({
               <FadeUp key={step.title} delay={idx * 0.08}>
                 <div className="group relative rounded-3xl border border-white/8 bg-[#0F0E0B] p-8 transition hover:border-[#C9A84C]/20 hover:bg-[#141210]">
                   {/* Step number — large ghost text */}
-                  <span
-                    className="absolute right-6 top-4 text-8xl font-black leading-none text-white/4 select-none"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                    aria-hidden
-                  >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
+                  <div className="flex justify-between">
+                    <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-gold-400 text-gold-400">
+                      <span className="text-sm font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+                        {idx + 1}
+                      </span>
+                    </div>
 
-                  <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#C9A84C]/30 text-[#C9A84C]">
-                    <span className="text-sm font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
-                      {idx + 1}
-                    </span>
+                    <h3
+                      className="text-xl font-bold text-white"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {step.title}
+                    </h3>
                   </div>
-
-                  <h3
-                    className="text-xl font-bold text-white"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    {step.title}
-                  </h3>
                   <p className="mt-2 text-sm font-light leading-relaxed text-white/50">
                     {step.desc}
                   </p>
